@@ -18,8 +18,11 @@ class MainActivity : AppCompatActivity() {
 
 //        Tell Activity as soon as it is created, it should notify the Observer,you can add mulitple observers
         lifecycle.addObserver(Observer())
+//      lifecycle.addObserver(Observer())   // you can add mulitple observers
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+//       ViewModelProvider(this)  - this means the activity is the owner of the ViewModel
+
+        viewModel = ViewModelProvider(this,MainViewModelFactory(-1)).get(MainViewModel::class.java)
 
         val textCounter = findViewById<TextView>(R.id.displayText)
 

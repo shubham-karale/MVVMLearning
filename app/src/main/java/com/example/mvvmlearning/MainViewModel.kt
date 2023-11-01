@@ -2,9 +2,9 @@ package com.example.mvvmlearning
 
 import androidx.lifecycle.ViewModel
 
-class MainViewModel:ViewModel() {
+class MainViewModel(val initialValue:Int):ViewModel() {
 
-    var counter = 0;
+    var counter = initialValue;
 
     fun increment(){
         counter++;
